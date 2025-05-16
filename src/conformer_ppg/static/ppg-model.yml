@@ -1,0 +1,31 @@
+frontend: ASRFrontend
+frontend_conf:
+    fs: 16000
+
+normalize: UtteranceMVN
+normalize_conf:
+    norm_means: true
+    norm_vars: true
+
+encoder: ConformerEncoder
+encoder_conf:
+    attention_dim: 144
+    attention_heads: 4
+    linear_units: 576
+    num_blocks: 16
+    dropout_rate: 0.1
+    positional_dropout_rate: 0.1
+    attention_dropout_rate: 0.0
+    input_layer: conv2d
+    normalize_before: true
+    concat_after: false
+    positionwise_layer_type: linear
+    positionwise_conv_kernel_size: 1
+    macaron_style: true
+    pos_enc_layer_type: rel_pos
+    selfattention_layer_type: rel_selfattn
+    activation_type: swish
+    use_cnn_module: true
+    cnn_module_kernel: 15
+    no_subsample: true
+    subsample_by_2: false
